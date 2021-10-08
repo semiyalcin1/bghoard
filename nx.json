@@ -1,0 +1,81 @@
+{
+  "npmScope": "bghoard",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    },
+    "review": {
+      "tags": ["scope:review"]
+    },
+    "review-data-access-games": {
+      "tags": []
+    },
+    "review-e2e": {
+      "tags": ["scope:review"],
+      "implicitDependencies": ["review"]
+    },
+    "review-feature-list": {
+      "tags": []
+    },
+    "review-ui-tile": {
+      "tags": []
+    },
+    "review-util-formatters": {
+      "tags": []
+    },
+    "store": {
+      "tags": []
+    },
+    "store-data-access-cart": {
+      "tags": []
+    },
+    "store-data-access-games": {
+      "tags": []
+    },
+    "store-e2e": {
+      "tags": [],
+      "implicitDependencies": ["store"]
+    },
+    "store-feature-cart": {
+      "tags": []
+    },
+    "store-feature-details": {
+      "tags": []
+    },
+    "store-feature-list": {
+      "tags": []
+    },
+    "store-ui-formatters": {
+      "tags": []
+    }
+  }
+}
